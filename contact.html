@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="contact">
+  <div class="contact-container">
+    
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you</p>
+
+    <form id="contactForm">
+      
+      <div class="input-group">
+        <input type="text" id="name" required>
+        <label>Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="email" required>
+        <label>Email</label>
+      </div>
+
+      <div class="input-group">
+        <textarea id="message" rows="5" required></textarea>
+        <label>Message</label>
+      </div>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+
+  </div>
+</section>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault()
+
+  let name = document.getElementById("name").value.trim()
+  let email = document.getElementById("email").value.trim()
+  let message = document.getElementById("message").value.trim()
+
+  if(!name || !email || !message){
+    alert("Fill all fields properly")
+    return
+  }
+
+  alert("Message sent successfully!")
+
+  this.reset()
+})
+</script>
+</body>
+</html>
